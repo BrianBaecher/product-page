@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script defer src="app.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | E-commerce product page</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <section class="head">
+      <div class="hamburger">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <div class="headText">
+        <img src="./images/logo.svg" alt="logo" />
+        <div class="nav-menu">
+          <a href="" class="collections nav-link">Collections</a>
+          <a href="" class="men nav-link">Men</a>
+          <a href="" class="women">Women</a>
+          <a href="" class="about nav-link">About</a>
+          <a href="" class="contact">Contact</a>
+        </div>
+      </div>
+      
+      <div class="headImages">
+        <i id="cartImg" class="fa-solid fa-cart-shopping"></i>
+        <img class="pfp" src="./images/image-avatar.png" alt="" />
+      </div>
+    </section>
+    <div class="center">
+      <section class="productPhotos">
+        <img class="mainImg" src="./images/image-product-1.jpg" alt="" />
+        <div class="thumbnails">
+          <img src="./images/image-product-1-thumbnail.jpg" alt="" />
+          <img src="./images/image-product-2-thumbnail.jpg" alt="" />
+          <img src="./images/image-product-3-thumbnail.jpg" alt="" />
+          <img src="./images/image-product-4-thumbnail.jpg" alt="" />
+        </div>
+      </section>
+      <section class="productInfo">
+        <h4 class="company">SNEAKER COMPANY</h4>
+        <h2 class="productName">Fall Limited Edition Sneakers</h2>
+        <p class="blurb">
+          These low-profile sneakers are your perfect casual wear companion.
+          Featuring a durable rubber outer sole, they’ll withstand everything
+          the weather can offer.
+        </p>
+        <div class="priceInfoContain">
+          <div class="priceContain">
+            <h3 class="salePrice">$125.00</h3>
+            <p class="salePercent">50%</p>
+          </div>
+          <p class="retailPrice">$250.00</p>
+        </div>
+        <div class="cartActionsContain">
+          <div class="cartAmount">
+            <span class="amt minus">-</span>
+            <span class="num">0</span>
+            <span class="amt plus">+</span>
+          </div>
+          <div class="cartAddButton">
+            <i class="fa-solid fa-cart-shopping">Add to cart</i>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- Sneaker Company Fall Limited Edition Sneakers These low-profile sneakers are
+    your perfect casual wear companion. Featuring a durable rubber outer sole,
+    they’ll withstand everything the weather can offer. $125.00 50% $250.00 0
+    Add to cart -->
+
+    <!-- <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div> -->
+  </body>
+</html>

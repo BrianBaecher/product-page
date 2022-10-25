@@ -1,0 +1,234 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+* {
+  box-sizing: border-box;
+  font-family: "Kumbh Sans", sans-serif;
+}
+/* ---Header--- */
+.head {
+  border-bottom: 2px solid rgba(128, 128, 128, 0.271);
+  width: 90vw;
+  height: 80px;
+  margin-left: 5%;
+  margin-right: 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headText {
+  display: flex;
+}
+
+.nav-menu > a {
+  padding: 0 0.5rem;
+  color: gray;
+  text-decoration: none;
+}
+
+.nav-menu > a:hover {
+  text-decoration: underline;
+}
+
+
+.headImages {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pfp {
+  height: 2rem;
+  margin-left: 20px;
+}
+
+.hamburger {
+  display: none;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: black;
+}
+
+/* Body/center of page */
+.center {
+  display: flex;
+  justify-content: space-between;
+  width: 70vw;
+  max-width: 768px;
+  margin: 5% 20%;
+}
+
+.productInfo {
+  width: 50%;
+}
+
+/* ---Product Photos--- */
+
+img {
+  border-radius: 10%;
+}
+
+.thumbnails {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mainImg {
+  border-radius: 5%;
+  height: 300px;
+}
+
+.thumbnails > img {
+  height: 72px;
+}
+
+/* ---Product info--- */
+
+.priceInfoContain {
+  display: flex;
+  flex-direction: column;
+}
+.retailPrice {
+  margin: 0 0;
+  font-size: 12px;
+  color: gray;
+  text-decoration: line-through;
+}
+.priceContain {
+  width: 30%;
+  height: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.salePercent {
+  width: 2rem;
+  text-align: center;
+  color: hsl(26, 100%, 55%);
+  font-weight: 700;
+  font-size: 12px;
+  background-color: rgba(128, 128, 128, 0.428);
+  border-radius: 10%;
+}
+
+.company {
+  color: hsl(26, 100%, 55%);
+  font-size: 12px;
+}
+
+.productName {
+  font-size: 34px;
+  font-weight: 700;
+  margin: 0 0;
+}
+
+.blurb {
+  color: rgb(111, 103, 103);
+  font-weight: 500;
+}
+
+/* ---Cart Action Panel--- */
+.cartActionsContain {
+  display: flex;
+  /* justify-content: space-between; */
+  width: 65%;
+  margin-top: 1rem;
+}
+
+.cartAmount {
+  padding: 0 0.5rem;
+  border-radius: 5px;
+  width: 35%;
+  height: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(165, 165, 165, 0.274);
+}
+
+.amt {
+  font-size: 16px;
+  font-weight: 700;
+  color: hsl(26, 100%, 55%);
+}
+
+.num {
+  font-size: 16px;
+}
+
+.cartAddButton {
+  border: 1px dotted purple;
+  margin-left: 5%;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  background-color: hsl(26, 100%, 55%);
+  padding: 0 5%;
+  border-radius: 5px;
+  color: hsl(0, 0%, 100%);
+}
+
+@media screen and (max-width: 1023px) {
+  .center {
+    margin: 0 0;
+    padding: 0 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+  }
+  .hamburger {
+    display: block;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .nav-menu {
+    margin: 0 0;
+    padding: 0 0;
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    gap: 0;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    transition: 0.3s;
+  }
+
+  .nav-link {
+    /* margin: 16px 0; */
+  }
+  .nav-menu > a {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    text-align: center;
+  }
+  .nav-menu.active {
+    background-color: hsl(0, 0%, 100%);
+    padding: 0 0;
+    margin: 0 0;
+    left: 0;
+    width: 50vw;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
+}
