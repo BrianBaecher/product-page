@@ -15,8 +15,8 @@
   align-items: center;
 }
 
-.logo{
-    margin-right: 2rem;
+.logo {
+  margin-right: 2rem;
 }
 
 .headText {
@@ -72,6 +72,9 @@
 }
 
 /* ---Product Photos--- */
+.arrows {
+  display: none;
+}
 
 img {
   border-radius: 10%;
@@ -111,7 +114,7 @@ img {
 }
 
 .salePercent {
-    padding: 0 .5rem;
+  padding: 0 0.5rem;
   margin-left: 1rem;
   text-align: center;
   color: hsl(26, 100%, 55%);
@@ -177,6 +180,8 @@ img {
   color: hsl(0, 0%, 100%);
 }
 
+/* TABLET and UNDER */
+
 @media screen and (max-width: 1023px) {
   .head {
     border-bottom: none;
@@ -199,6 +204,27 @@ img {
     width: 105vw;
     height: 105vw;
   }
+
+  .mainImgContain{
+    display: flex;
+    flex-direction: column;
+    width: 105vw;
+    height: 105vw;
+  }
+
+  .mainImgContain .arrows{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    height: 0;
+    width: 100vw;
+    top: -50%;
+    padding-left: 5%;
+    font-size:10vw;
+    color: rgba(6, 6, 6, 0.658);
+  }
+
+
   .thumbnails {
     display: none;
   }
