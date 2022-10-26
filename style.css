@@ -15,6 +15,10 @@
   align-items: center;
 }
 
+.logo{
+    margin-right: 2rem;
+}
+
 .headText {
   display: flex;
 }
@@ -28,7 +32,6 @@
 .nav-menu > a:hover {
   text-decoration: underline;
 }
-
 
 .headImages {
   display: flex;
@@ -60,7 +63,7 @@
   display: flex;
   justify-content: space-between;
   width: 70vw;
-  max-width: 768px;
+  /* max-width: 768px; */
   margin: 5% 20%;
 }
 
@@ -104,12 +107,11 @@ img {
   width: 30%;
   height: 2rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
 .salePercent {
-  width: 2rem;
+  margin-left: 1rem;
   text-align: center;
   color: hsl(26, 100%, 55%);
   font-weight: 700;
@@ -164,7 +166,6 @@ img {
 }
 
 .cartAddButton {
-  border: 1px dotted purple;
   margin-left: 5%;
   font-size: 12px;
   display: flex;
@@ -176,6 +177,14 @@ img {
 }
 
 @media screen and (max-width: 1023px) {
+  .head {
+    border-bottom: none;
+  }
+
+  .productInfo {
+    width: 90%;
+  }
+
   .center {
     margin: 0 0;
     padding: 0 0;
@@ -184,6 +193,15 @@ img {
     justify-content: center;
     width: 100vw;
   }
+  .mainImg {
+    border-radius: 0;
+    width: 105vw;
+    height: 105vw;
+  }
+  .thumbnails {
+    display: none;
+  }
+
   .hamburger {
     display: block;
   }
@@ -229,6 +247,44 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
+  .priceInfoContain {
+    width: 80%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .priceContain {
+    width: 40%;
+  }
+  .cartActionsContain {
+    margin: 0 0;
+    padding: 0 0;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cartAmount {
+    border-radius: 5px;
+    width: 70%;
+    height: 2rem;
+    margin-bottom: 5px;
+  }
+  .cartAddButton {
+    width: 70%;
+    height: 2rem;
+    margin-left: 0;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    background-color: hsl(26, 100%, 55%);
+    border-radius: 5px;
+    color: hsl(0, 0%, 100%);
   }
 }
