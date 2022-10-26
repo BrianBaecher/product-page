@@ -1,7 +1,7 @@
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
 
-// 1- HAMBURG MENU
+// 1- HAMBURG MENU (mobile)
 hamburger.addEventListener("click", () => {
     hamburger.classList.toggle("active");
     console.log("click");
@@ -50,4 +50,21 @@ function rightClick() {
     mainImg.src = imgSrcArray[activeSlideIdx]
 }
 
+// 3 Changing image on laptop res and up
+const thumbnails = document.querySelector(".thumbnails")
 
+thumbnails.addEventListener("click", (e) => console.log(e.srcElement.id))
+thumbnails.addEventListener("click", (e) => changeMainImg(e))
+let initialThumb = document.querySelector(".thumby")
+initialThumb.style.opacity = "50%"
+function changeMainImg(e){
+    let thumbies = document.querySelectorAll(".thumby")
+    console.log(thumbies)
+    thumbies.forEach((e) => {
+        e.style.opacity = "100%"
+    })
+    let activeThumb = document.getElementById(e.srcElement.id)
+    let targetNum = +e.target.id - 1
+    mainImg.src = imgSrcArray[targetNum]
+    activeThumb.style.opacity = "50%"
+}
