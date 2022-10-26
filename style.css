@@ -111,6 +111,7 @@ img {
 }
 
 .salePercent {
+    padding: 0 .5rem;
   margin-left: 1rem;
   text-align: center;
   color: hsl(26, 100%, 55%);
