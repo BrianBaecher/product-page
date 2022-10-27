@@ -33,7 +33,6 @@ const rightArrow = document.querySelector("#right");
 leftArrow.addEventListener("click", leftClick);
 
 function leftClick() {
-  console.log("left");
   if (activeSlideIdx > 0) {
     activeSlideIdx--;
   }
@@ -43,7 +42,6 @@ function leftClick() {
 rightArrow.addEventListener("click", rightClick);
 
 function rightClick() {
-  console.log("right");
   if (activeSlideIdx < imgSrcArray.length - 1) {
     activeSlideIdx++;
   }
@@ -53,9 +51,6 @@ function rightClick() {
 // 3 -> Changing image on laptop res and up
 const thumbnails = document.querySelector(".thumbnails");
 
-thumbnails.addEventListener("click", (e) =>
-  console.log(e.srcElement.classList, e.srcElement.classList[0] === "thumby")
-);
 thumbnails.addEventListener("click", (e) => changeMainImg(e));
 let initialThumb = document.querySelector(".thumby");
 initialThumb.style.opacity = "50%";
@@ -89,8 +84,45 @@ minus.addEventListener("click", () => {
 });
 
 // 4.b -> Cart
-const cart = {};
+let cart = {};
 
+// 4.c -> Cart Display
+const cartDisplay = document.querySelector(".cartBox");
+const cartIcon = document.getElementById("cartImg");
+cartIcon.addEventListener("click", () => {
+  cartDisplay.classList.toggle("active");
+});
+
+// 4.d -> Empty Cart Message
+const cartItems = document.querySelector(".cartItems");
+const cartItemsContain = document.querySelector(".cartItemsContain");
+const checkoutButton = document.querySelector(".checkoutButton");
+function cartChecker() {
+  if (Object.entries(cart).length === 0) {
+    document.querySelector(".emptyMessage").style.display = "block";
+    // cartItems.textContent = "Your cart is empty."; // this causes display issues after adding to cart if you've opened it while cart was 0
+    cartItemsContain.style.display = "none";
+    checkoutButton.style.display = "none";
+  }
+  if (Object.entries(cart).length !== 0) {
+    document.querySelector(".emptyMessage").style.display = "none";
+    cartItemsContain.style.display = "flex";
+    checkoutButton.style.display = "flex";
+    document.querySelector(".cartProductName").textContent =
+      cart.productName.substring(0, 20) + "...";
+    document.querySelector(".cartCalcPrice").textContent = cart.price;
+    document.querySelector(".cartCalcAmount").textContent = cart.productAmount;
+    document.querySelector(".cartCalcTotal").textContent =
+      "$" + (+cart.price.slice(1) * cart.productAmount + ".00");
+  }
+  document
+    .querySelector(".deleteButton")
+    .addEventListener("click", () => (cart = {}));
+  document
+    .querySelector(".deleteButton")
+    .addEventListener("click", cartChecker);
+}
+cartIcon.addEventListener("click", cartChecker);
 // add test
 const cartAddBtn = document.querySelector(".cartAddButton");
 cartAddBtn.addEventListener("click", cartAdd);
@@ -101,5 +133,6 @@ function cartAdd() {
     cart.price = document.querySelector(".salePrice").textContent;
     cart.productAmount = +amountNum.textContent;
   }
+  cartChecker();
   console.log(cart);
 }
